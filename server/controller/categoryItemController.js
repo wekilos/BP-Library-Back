@@ -187,7 +187,7 @@ const create = async (req, res) => {
 
         const newResult = await convertPdfPageToImage();
         console.log(newResult);
-        placeholder_direction = newResult?.path;
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
 
         // let randomNumber2 = Math.floor(Math.random() * 999999999999);
         // placeholder_direction =
@@ -338,7 +338,7 @@ const update = async (req, res) => {
 
         const newResult = await convertPdfPageToImage();
         console.log(newResult);
-        placeholder_direction = newResult?.path;
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
 
         // let randomNumber2 = Math.floor(Math.random() * 999999999999);
         // placeholder_direction =
