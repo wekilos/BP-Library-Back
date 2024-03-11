@@ -164,7 +164,7 @@ const create = async (req, res) => {
         // ---------------------------------------------------------------------------
         //  generate png file from pdf first page
         const options = {
-          density: 100,
+          density: 50,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "jpeg",
           width: 175,
@@ -295,7 +295,7 @@ const update = async (req, res) => {
         // ---------------------------------------------------------------------------
         //  generate png file from pdf first page
         const options = {
-          density: 100,
+          density: 50,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "jpeg",
           width: 175,
