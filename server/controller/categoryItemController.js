@@ -164,12 +164,11 @@ const create = async (req, res) => {
         // ---------------------------------------------------------------------------
         //  generate png file from pdf first page
         const options = {
-          density: 72,
-          quality: 90,
+          density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "jpeg",
-          width: 175,
-          height: 250,
+          width: 350,
+          height: 500,
         };
 
         const convert = fromPath(img_direction, options);
@@ -296,12 +295,11 @@ const update = async (req, res) => {
         // ---------------------------------------------------------------------------
         //  generate png file from pdf first page
         const options = {
-          density: 72,
-          quality: 90,
+          density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "jpeg",
-          width: 175,
-          height: 250,
+          width: 350,
+          height: 500,
         };
 
         const convert = fromPath(img_direction, options);

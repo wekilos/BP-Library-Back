@@ -4,6 +4,7 @@ const cors = require("cors");
 const multer = require("multer");
 const upload = multer();
 const fileupload = require("express-fileupload");
+const path = require("path");
 
 const PORT = process.env.PORT || 8282;
 // const https = require('https');
@@ -43,6 +44,12 @@ app.use((req, res, next) => {
 });
 
 const Routers = require("./server/routes/routes");
+
+app.get("/file/:filename", (req, res) => {
+  const { filename } = req.params;
+  const filePath = path.join(__dirname, filename);
+  res.sendFile(filePath);
+});
 
 app.use("/api", Routers);
 
