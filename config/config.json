@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "samsyk1902",
-    "database": "tbp-library",
+    "database": "tbplibrary",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "migrationStorageTableName":"migration"
@@ -10,7 +10,7 @@
   "test": {
     "username": "postgres",
     "password": "samsyk1902",
-    "database": "tbp-library",
+    "database": "tbplibrary",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "migrationStorageTableName":"migration"
@@ -18,7 +18,7 @@
   "production": {
     "username": "postgres",
     "password": "samsyk1902",
-    "database": "tbp-library",
+    "database": "tbplibrary",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "migrationStorageTableName":"migration"
