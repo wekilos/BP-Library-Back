@@ -96,6 +96,7 @@ const getOne = async (req, res) => {
           where: {
             [Op.and]: [Username],
           },
+          order: ["id", "DESC"],
           offset: Ofset,
           limit: Limit,
           include: [{ model: CategoryItemFile }],
