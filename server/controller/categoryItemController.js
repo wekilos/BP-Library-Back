@@ -291,27 +291,7 @@ const update = async (req, res) => {
         // console.log(pdf.text);
         fileHTML_ru = pdf.text?.replace(/\s/g, "");
         // ---------------------------------------------------------------------------
-        // // create the API client instance
-        // var client = new pdfcrowd.PdfToHtmlClient(
-        //   "demo",
-        //   "ce544b6ea52a5621fb9d55f8b542d14d"
-        // );
 
-        // // run the conversion and write the result to a file
-        // client.convertFileToFile(
-        //   img_direction,
-        //   "./uploads/" + randomNumber + files?.name + ".html",
-        //   function (err, fileName) {
-        //     if (err) return console.error("Pdfcrowd Error: " + err);
-        //     console.log("Success: the file was created " + fileName);
-
-        //     fs.readFile(fileName, (err, data) => {
-        //       if (err) console.log(err);
-        //       doit(data.toString());
-        //     });
-        //     // fileHTML?.length > 0 && fs.unlink(fileName);
-        //   }
-        // );
         // ---------------------------------------------------------------------------
         //  generate png file from pdf first page
         const options = {
@@ -339,11 +319,6 @@ const update = async (req, res) => {
 
         const newResult = await convertPdfPageToImage();
         console.log(newResult);
-
-        // let randomNumber2 = Math.floor(Math.random() * 999999999999);
-        // placeholder_direction =
-        //   `./uploads/` + randomNumber2 + `${newResult?.name}`;
-        // await fs.promises.writeFile(placeholder_direction, newResult?.data);
       } else if (mimeTypeFile == "docx") {
         const result = await mammoth.convertToHtml({ path: img_direction });
         fileHTML = result.value;
@@ -406,13 +381,13 @@ const Destroy = async (req, res) => {
   if (data) {
     data?.placeholder?.length > 0 &&
       fs.unlink(data?.placeholder, (err) => {
-        if (err) throw err;
+        if (err) console.log(err);
         console.log(data?.placeholder + " was deleted");
       });
     data?.CategoryItemFiles?.map((itemFile) => {
       itemFile?.filename?.length > 0 &&
         fs.unlink(itemFile?.filename, (err) => {
-          if (err) throw err;
+          if (err) console.log(err);
           console.log(itemFile?.filename + " was deleted");
         });
     });
