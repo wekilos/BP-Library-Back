@@ -13,7 +13,6 @@ const CategoryControllers = require("../controller/categoryController");
 const ItemControllers = require("../controller/categoryItemController");
 
 // For Token
-
 const verifyToken = async (req, res, next) => {
   const bearerHeader =
     req.headers["authorization"] || req.headers["Authorization"];
