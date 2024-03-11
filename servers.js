@@ -16,8 +16,8 @@ const app = express();
 
 app.use(fileupload());
 app.use("/uploads", express.static("uploads"));
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+app.use(bodyParser.json({ limit: "500mb" }));
+app.use(bodyParser.urlencoded({ limit: "500mb", extended: true }));
 app.use(
   cors({
     origin: "*",
@@ -47,7 +47,8 @@ const Routers = require("./server/routes/routes");
 
 app.get("/file/:filename", (req, res) => {
   const { filename } = req.params;
-  const filePath = path.join(__dirname, filename);
+  const filePath = path.join(__dirname, "/uploads/", filename);
+  console.log("filename:::>>>>" + filename);
   res.sendFile(filePath);
 });
 
