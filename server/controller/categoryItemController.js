@@ -133,6 +133,7 @@ const create = async (req, res) => {
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
         // Parse the PDF file
         const pdf = await PDFParser(files?.data);
 
@@ -187,7 +188,6 @@ const create = async (req, res) => {
 
         const newResult = await convertPdfPageToImage();
         console.log(newResult);
-        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
 
         // let randomNumber2 = Math.floor(Math.random() * 999999999999);
         // placeholder_direction =
@@ -284,6 +284,7 @@ const update = async (req, res) => {
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
         // Parse the PDF file
         const pdf = await PDFParser(files?.data);
 
@@ -338,7 +339,6 @@ const update = async (req, res) => {
 
         const newResult = await convertPdfPageToImage();
         console.log(newResult);
-        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
 
         // let randomNumber2 = Math.floor(Math.random() * 999999999999);
         // placeholder_direction =
