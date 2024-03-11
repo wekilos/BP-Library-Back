@@ -376,10 +376,10 @@ const update = async (req, res) => {
 const imgUpload = async (req, res) => {
   const { id } = req.params;
   const files = req.files?.file;
-  let img_direction = "";
+
   if (files) {
     let randomNumber = Math.floor(Math.random() * 999999999999);
-    img_direction = `./uploads/` + randomNumber + `${files?.name}`;
+    let img_direction = `./uploads/` + randomNumber + `${files?.name}`;
     await fs.promises.writeFile(img_direction, files?.data);
 
     CategoryItem.update({ placeholder: img_direction }, { where: { id: id } })
