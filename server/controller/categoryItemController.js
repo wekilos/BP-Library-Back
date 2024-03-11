@@ -167,8 +167,8 @@ const create = async (req, res) => {
           density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "png",
-          width: 350,
-          height: 500,
+          width: 175,
+          height: 250,
         };
 
         const convert = fromPath(img_direction, options);
@@ -298,8 +298,8 @@ const update = async (req, res) => {
           density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
           format: "png",
-          width: 350,
-          height: 500,
+          width: 175,
+          height: 250,
         };
 
         const convert = fromPath(img_direction, options);
