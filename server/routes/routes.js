@@ -74,6 +74,7 @@ router.get("/item/:id", cache.get, ItemControllers.getOne, cache.set);
 router.get("/item/download/:id", ItemControllers.download);
 
 router.post("/item/create", ItemControllers.create);
+router.post("/item/upload/:id", ItemControllers.imgUpload);
 router.patch("/item/update", ItemControllers.update);
 router.delete("/item/destroy/:id", ItemControllers.Destroy);
 

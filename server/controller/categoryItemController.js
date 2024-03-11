@@ -373,6 +373,26 @@ const update = async (req, res) => {
   }
 };
 
+const imgUpload = async (req, res) => {
+  const { id } = req.params;
+  const files = req.files?.file;
+  let img_direction = "";
+  if (files) {
+    let randomNumber = Math.floor(Math.random() * 999999999999);
+    img_direction = `./uploads/` + randomNumber + `${files?.name}`;
+    await fs.promises.writeFile(img_direction, files?.data);
+
+    CategoryItem.update({ placeholder: img_direction }, { where: { id: id } })
+      .then((data) => {
+        res.json("uploaded");
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json(err);
+      });
+  }
+};
+
 const Destroy = async (req, res) => {
   const { id } = req.params;
 
@@ -436,3 +456,4 @@ exports.create = create;
 exports.update = update;
 exports.Destroy = Destroy;
 exports.download = download;
+exports.imgUpload = imgUpload;
