@@ -41,7 +41,7 @@ const getAll = async (req, res) => {
       {
         model: CategoryItem,
         where: Username,
-
+        limit: 20,
         include: [{ model: CategoryItemFile }],
       },
     ],
