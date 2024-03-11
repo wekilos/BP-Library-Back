@@ -133,7 +133,7 @@ const create = async (req, res) => {
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
-        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.jpeg";
         // Parse the PDF file
         const pdf = await PDFParser(files?.data);
 
@@ -166,7 +166,7 @@ const create = async (req, res) => {
         const options = {
           density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
-          format: "png",
+          format: "jpeg",
           width: 175,
           height: 250,
         };
@@ -284,7 +284,7 @@ const update = async (req, res) => {
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
-        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.png";
+        placeholder_direction = "./uploads/img" + randomNumber2 + ".1.jpeg";
         // Parse the PDF file
         const pdf = await PDFParser(files?.data);
 
@@ -297,7 +297,7 @@ const update = async (req, res) => {
         const options = {
           density: 100,
           saveFilename: "./uploads/img" + randomNumber2,
-          format: "png",
+          format: "jpeg",
           width: 175,
           height: 250,
         };
