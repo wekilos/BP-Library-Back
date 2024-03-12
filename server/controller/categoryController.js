@@ -12,7 +12,11 @@ const Op = Sequelize.Op;
 const fs = require("fs");
 
 const getAll = async (req, res) => {
-  const { search_query } = req.query;
+  const { search_query, page, limit } = req.query;
+
+  const Page = page ? page : 1;
+  const Limit = limit ? limit : 20;
+  const Ofset = Limit * (Page - 1);
 
   const Username =
     search_query &&
@@ -41,8 +45,14 @@ const getAll = async (req, res) => {
       {
         model: CategoryItem,
         where: Username,
-        limit: 20,
-        include: [{ model: CategoryItemFile }],
+        limit: Limit,
+        offset: Ofset,
+        include: [
+          {
+            model: CategoryItemFile,
+            attributes: ["id", "name_tm", "name_ru", "name_en", "CategoryId"],
+          },
+        ],
       },
     ],
 
