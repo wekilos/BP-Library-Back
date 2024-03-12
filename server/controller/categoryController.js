@@ -47,10 +47,10 @@ const getAll = async (req, res) => {
         where: Username,
         limit: Limit,
         offset: Ofset,
+        attributes: ["id", "name_tm", "year", "placeholder"],
         include: [
           {
             model: CategoryItemFile,
-            // attributes: ["id", "name_tm", "name_ru", "name_en"],
           },
         ],
       },
