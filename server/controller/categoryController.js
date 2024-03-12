@@ -45,7 +45,7 @@ const getAll = async (req, res) => {
       {
         model: CategoryItem,
         where: Username,
-        // attributes: ["id", "name_tm", "year", "placeholder"],
+        attributes: ["id", "name_tm", "year", "placeholder"],
         limit: Limit,
         offset: Ofset,
         include: [
