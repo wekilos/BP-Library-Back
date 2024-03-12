@@ -44,10 +44,10 @@ const getAll = async (req, res) => {
     include: [
       {
         model: CategoryItem,
+        attributes: ["id", "name_tm", "year", "placeholder"],
         where: Username,
         limit: Limit,
         offset: Ofset,
-        attributes: ["id", "name_tm", "year", "placeholder"],
         include: [
           {
             model: CategoryItemFile,
