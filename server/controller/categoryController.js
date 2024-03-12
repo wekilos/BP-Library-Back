@@ -50,7 +50,7 @@ const getAll = async (req, res) => {
         include: [
           {
             model: CategoryItemFile,
-            attributes: ["id", "name_tm", "name_ru", "name_en", "CategoryId"],
+            attributes: ["id", "name_tm", "name_ru", "name_en"],
           },
         ],
       },
