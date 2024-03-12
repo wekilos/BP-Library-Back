@@ -44,8 +44,8 @@ const getAll = async (req, res) => {
     include: [
       {
         model: CategoryItem,
-        attributes: ["id", "name_tm", "year", "placeholder"],
         where: Username,
+        attributes: ["id", "name_tm", "year", "placeholder"],
         limit: Limit,
         offset: Ofset,
         include: [
