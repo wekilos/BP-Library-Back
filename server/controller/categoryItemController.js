@@ -129,7 +129,7 @@ const create = async (req, res) => {
       const typeArray = files?.name.split(".");
       mimeTypeFile = typeArray[typeArray.length - 1];
       let randomNumber = Math.floor(Math.random() * 999999999999);
-      img_direction = `./uploads/` + randomNumber + `${files?.name}`;
+      img_direction = `./uploads/` + randomNumber + `${files?.name.slice(-5)}`;
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
@@ -281,7 +281,7 @@ const update = async (req, res) => {
       const typeArray = files?.name.split(".");
       mimeTypeFile = typeArray[typeArray.length - 1];
       let randomNumber = Math.floor(Math.random() * 999999999999);
-      img_direction = `./uploads/` + randomNumber + `${files?.name}`;
+      img_direction = `./uploads/` + randomNumber + `${files?.name?.slice(-5)}`;
       await fs.promises.writeFile(img_direction, files?.data);
       console.log("mimeTypeFile::" + mimeTypeFile);
       if (mimeTypeFile == "pdf") {
